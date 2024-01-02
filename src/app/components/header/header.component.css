@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid #777;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.links,
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo > img {
+  width: 40px;
+  margin-right: 0.6em;
+}
+
+.logo > h2 {
+  transition: 0.3s;
+}
+
+.logo:hover > h2 {
+  color: var(--primary-color);
+}
+

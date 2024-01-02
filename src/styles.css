@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #dec129;
+  --secondary-color: #444;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Cambria, serif;
+  color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: 0.2s;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+.container{
+  min-height: 80vh;
+}
