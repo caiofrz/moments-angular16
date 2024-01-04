@@ -8,12 +8,12 @@ footer {
   justify-content: center;
   gap: 5px;
 
-  height: 12vh;
+  height: 14vh;
 
+  bottom: 0;
 }
 
-footer >
-h3,
+footer > h3,
 span {
   color: #fff;
 }
