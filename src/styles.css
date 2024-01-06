@@ -3,6 +3,7 @@
 :root {
   --primary-color: #dec129;
   --secondary-color: #444;
+  --error-color: #dc3545;
 }
 * {
   padding: 0;
