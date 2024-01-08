@@ -11,6 +11,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
 import { FormComponent } from './components/form/form.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormComponent } from './components/form/form.component';
     AboutComponent,
     NewMomentComponent,
     FormComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
