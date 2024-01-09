@@ -35,7 +35,7 @@ input[type="file"] {
 }
 
 input[type="submit"] {
-  background-color: var(--primary-color);
+  background-color: var(--primary-yellow);
   color: #fff;
   padding: 10px 15px;
   border: none;

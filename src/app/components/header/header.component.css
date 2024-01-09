@@ -27,6 +27,6 @@ ul > li {
 }
 
 .logo:hover > h2 {
-  color: var(--primary-color);
+  color: var(--primary-yellow);
 }
 

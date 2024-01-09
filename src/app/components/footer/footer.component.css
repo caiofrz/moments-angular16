@@ -1,5 +1,5 @@
 footer {
-  border-top: 1px solid var(--primary-color);
+  border-top: 1px solid var(--primary-yellow);
   background-color: var(--secondary-color);
 
   display: flex;

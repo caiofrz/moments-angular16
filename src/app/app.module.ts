@@ -13,6 +13,11 @@ import { NewMomentComponent } from './components/pages/new-moment/new-moment.com
 import { FormComponent } from './components/form/form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +35,10 @@ import { MessagesComponent } from './components/messages/messages.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
