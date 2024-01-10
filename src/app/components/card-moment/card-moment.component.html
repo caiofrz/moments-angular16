@@ -1,0 +1,21 @@
+<div class="card flex justify-content-center">
+  <p-card header="{{ moment.title }}" subheader="{{ moment.created_at }}">
+    <ng-template pTemplate="header">
+      <img
+        *ngIf="moment.image; else defaultImage"
+        alt="{{ moment.title }}"
+        src="{{ imageApiUrl }}/{{ moment.image }}"
+      />
+      <ng-template #defaultImage>
+        <img alt="Imagem Padrão" src="../../../assets/moments.png" />
+      </ng-template>
+    </ng-template>
+    <p>{{ moment.description }}</p>
+    <ng-template pTemplate="footer">
+      <span>Comentários: {{ moment.comments?.length }}</span>
+      <br />
+      <br />
+      <p><a routerLink="moment/{{ moment.id }}">Ver mais detalhes</a></p>
+    </ng-template>
+  </p-card>
+</div>

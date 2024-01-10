@@ -16,6 +16,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
+import { CardModule } from 'primeng/card';
+import { CardMomentComponent } from './components/card-moment/card-moment.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { MessageService } from 'primeng/api';
     NewMomentComponent,
     FormComponent,
     MessagesComponent,
+    CardMomentComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { MessageService } from 'primeng/api';
     ReactiveFormsModule,
     ToastModule,
     BrowserAnimationsModule,
+    CardModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
