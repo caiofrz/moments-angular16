@@ -1,10 +1,18 @@
 <div class="home-container">
-  <ng-container *ngIf="moments.length > 0; else noMoments">
-    <div *ngFor="let moment of moments" class="card-moment">
-      <app-card-moment [moment]="moment"></app-card-moment>
+  <ng-container *ngIf="loading; else momentsContent">
+    <div class="loading-icon">
+      <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+      <p>Carregando...</p>
     </div>
   </ng-container>
-  <ng-template #noMoments>
-    <h1>Você não tem Momentos cadastrados!</h1>
+  <ng-template #momentsContent>
+    <ng-container *ngIf="moments.length > 0; else noMoments">
+      <div *ngFor="let moment of moments" class="card-moment">
+        <app-card-moment [moment]="moment"></app-card-moment>
+      </div>
+    </ng-container>
+    <ng-template #noMoments>
+      <h1>Você não tem Momentos cadastrados!</h1>
+    </ng-template>
   </ng-template>
 </div>

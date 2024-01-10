@@ -11,10 +11,12 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
   moments: Moment[] = [];
   momentsSearch: Moment[] = [];
+  loading: boolean = true;
 
   private readonly baseApiUrl = environment.baseApiURL;
 
   constructor(private momentService: MomentService) {}
+
   ngOnInit(): void {
     this.momentService.getAll().subscribe((moments) => {
       const data = moments.data;
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit {
 
       this.moments = data;
       this.momentsSearch = data;
+      this.loading = false;
     });
   }
 }
