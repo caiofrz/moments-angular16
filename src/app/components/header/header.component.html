@@ -1,10 +1,12 @@
+
 <header>
   <nav>
     <a routerLink="/" class="logo">
       <img src="../../../assets/moments.png" alt="Logo Moments" />
       <h2>Moments</h2>
     </a>
-    <ul class="links">
+    <label for="menu-toggle" class="menu-icon" (click)="showMenu()">&#9776;</label>
+    <ul class="links" ngClass="{{class}}">
       <li><a routerLink="/">Home</a></li>
       <li><a id="add" routerLink="/moments/new">Compartilhar</a></li>
       <li><a routerLink="/about">Sobre</a></li>
