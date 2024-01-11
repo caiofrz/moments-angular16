@@ -27,12 +27,6 @@ export class MomentComponent implements OnInit {
 
   commentForm!: FormGroup;
 
-  comment: Comment = {
-    text: 'Comentário teste',
-    username: 'CaioFerraz',
-    momentId: '2',
-  };
-
   constructor(
     private momentService: MomentService,
     private route: ActivatedRoute,
@@ -44,9 +38,6 @@ export class MomentComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.momentService.getOne(id).subscribe((data) => {
       this.moment = data.data;
-      this.moment.comments!.push(this.comment);
-      this.moment.comments!.push(this.comment);
-      this.moment.comments!.push(this.comment);
     });
 
     this.commentForm = new FormGroup({
