@@ -19,22 +19,18 @@ export class HomeComponent implements OnInit {
   constructor(private momentService: MomentService) {}
 
   ngOnInit(): void {
-    setInterval(
-      () =>
-        this.momentService.getAll().subscribe((moments) => {
-          const data = moments.data;
-          data.map((moment) => {
-            moment.created_at = new Date(moment.created_at!).toLocaleDateString(
-              'pt-BR'
-            );
-          });
+    this.momentService.getAll().subscribe((moments) => {
+      const data = moments.data;
+      data.map((moment) => {
+        moment.created_at = new Date(moment.created_at!).toLocaleDateString(
+          'pt-BR'
+        );
+      });
 
-          this.moments = data;
-          this.momentsSearch = data;
-          this.loading = false;
-        }),
-      5000
-    );
+      this.moments = data;
+      this.momentsSearch = data;
+      this.loading = false;
+    });
   }
 
   search(event: Event): void {
