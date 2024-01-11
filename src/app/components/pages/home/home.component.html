@@ -1,18 +1,27 @@
 <div class="home-container">
-  <ng-container *ngIf="loading; else momentsContent">
-    <div class="loading-icon">
-      <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
-      <p>Carregando...</p>
-    </div>
-  </ng-container>
-  <ng-template #momentsContent>
-    <ng-container *ngIf="moments.length > 0; else noMoments">
-      <div *ngFor="let moment of moments" class="card-moment">
-        <app-card-moment [moment]="moment"></app-card-moment>
+  <header>
+    <h2>Veja o que está sendo compartilhado</h2>
+    <form>
+      <i class="pi pi-search" style="color: 'var(--primary-yellow)'"></i>
+      <input type="text" placeholder="Busque por um Momento..." (input)="search($event)"/>
+    </form>
+  </header>
+  <div class="moments-container">
+    <ng-container *ngIf="loading; else momentsContent">
+      <div class="loading-icon">
+        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+        <p>Carregando...</p>
       </div>
     </ng-container>
-    <ng-template #noMoments>
-      <h1>Você não tem Momentos cadastrados!</h1>
+    <ng-template #momentsContent>
+      <ng-container *ngIf="moments.length > 0; else noMoments">
+        <div *ngFor="let moment of moments" class="card-moment">
+          <app-card-moment [moment]="moment"></app-card-moment>
+        </div>
+      </ng-container>
+      <ng-template #noMoments>
+        <h1>Você não tem Momentos cadastrados!</h1>
+      </ng-template>
     </ng-template>
-  </ng-template>
+  </div>
 </div>
