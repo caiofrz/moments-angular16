@@ -1,0 +1,76 @@
+<div class="moment-detail">
+  <div class="moment-header">
+    <h2>{{ moment.title }}</h2>
+  </div>
+  <div class="moment-content">
+    <div *ngIf="moment.image">
+      <img
+        src="{{ imageApiUrl }}/{{ moment.image }}"
+        alt="{{ moment.title }}"
+        class="moment-image"
+      />
+    </div>
+    <p>{{ moment.description }}</p>
+    <div
+      class="comment-list"
+      *ngIf="moment.comments!.length > 0; else noComments"
+    >
+      <h3>Comentários ({{ moment.comments!.length }})</h3>
+      <ul>
+        <li *ngFor="let comment of moment.comments">
+          <strong>{{ comment.username }}:</strong> {{ comment.text }}
+          <hr>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noComments>
+      <h3>Comentários (0)</h3>
+    </ng-template>
+    <div class="moment-comments">
+      <h3>Adicionar Comentário</h3>
+      <form
+        [formGroup]="commentForm"
+        #formDir="ngForm"
+        (ngSubmit)="onSubmit(formDir)"
+      >
+        <div class="form-group">
+          <label for="commentText">Comentário:</label>
+          <textarea
+            id="commentText"
+            name="text"
+            rows="4"
+            placeholder="Escreva o seu comentário..."
+            required
+            formControlName="text"
+          ></textarea>
+          <div
+          class="validation-error"
+          *ngIf="text.invalid && formDir.submitted"
+        >
+          <p *ngIf="text.errors?.['required']">Seu comentário é obrigatório!</p>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="commentUsername">Seu Nome:</label>
+          <input
+            type="text"
+            id="commentUsername"
+            name="username"
+            placeholder="Informe seu nome..."
+            required
+            formControlName="username"
+          />
+          <div
+            class="validation-error"
+            *ngIf="username.invalid && formDir.submitted"
+          >
+            <p *ngIf="username.errors?.['required']">Seu nome é obrigatório!</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Adicionar Comentário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
