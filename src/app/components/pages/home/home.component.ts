@@ -29,8 +29,9 @@ export class HomeComponent implements OnInit {
 
       this.moments = data;
       this.momentsSearch = data;
-      this.loading = false;
     });
+    setTimeout(()=>this.loading = false, 1000)
+
   }
 
   search(event: Event): void {
